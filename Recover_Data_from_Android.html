@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>How to Recover Data from a Dead Android Phone</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,">
+
+        <link rel="stylesheet" href="web.css">
+
+
+    </head>
+
+    <body>
+
+        <section class="welcome-div">
+
+            <div class="welcomea-div">
+
+                <h1>CURIOUS TECH DEN</h1>
+
+            </div>
+
+            <div class="welcomea2-div">
+                <h1 id="typing-text"></h1>
+            </div>
+            
+        </section>
+
+        <div class="clear"></div>
+
+        <section class="article-content">
+
+            <main class="article">
+
+                <h1>How to Recover Data from a Dead Android Phone</h1>
+
+                <p class="date">21 August 2024 | Posts</p>
+
+                <p>Pearl Ramson</p>
+
+                <img src="img/Adroid Data Recovery.png" alt="android data recovery">
+
+                <p>Do you have a dead Android phone with precious memories—photos, videos, music—that you thought were 
+                    lost forever? If so, here’s some good news: recovering data from a seemingly “dead” Android phone is indeed possible.
+                </p>
+                    
+                <p>Many assume that if a phone is dead or unresponsive, data recovery is out of reach. 
+                    But with the right tools and the steps I will show you here, you can regain access to your files.
+                </p>
+
+                <p>A “dead” Android phone, in this context, means any phone that’s unresponsive or inaccessible 
+                    due to issues like boot loop, forgotten password, bricked device, or hardware malfunction. 
+                    While these issues may prevent normal access, they don’t necessarily mean your data is gone for good.
+                </p>
+
+                <p>If you've already tried multiple software solutions with no success, don’t worry. 
+                    This tutorial walks you through a proven, 100%-free method to recover data from 
+                    a dead Android phone with an intact memory. So, let’s get started!
+                </p>
+
+                <p>Note:</p>
+
+                <p>This method works as long as the phone’s memory hasn’t been wiped through flashing or 
+                    factory resetting. Stay tuned for updates as we continue exploring ways to recover data 
+                    from factory-reset or flashed phones. You should know we are committed to satisfying the curiosity of every reader here.
+                </p>
+
+                <h2>Tools Needed</h2>
+
+                <p>A personal computer</p>
+
+                <p>Internet access</p>
+
+                <p>USB cable</p>
+
+                <h2>Step-by-Step Tutorial</h2>
+
+                <h3>Step 1: Download SP Flash Tool </h3>
+
+                <p>First, download the latest SP Flash Tool from spflashtools.com in zip format (version 5.2316 
+                    seems to be the latest as of 2024). Extract the zip folder to any location on your pc.
+                </p>
+
+                <img src="img/SP Flash Tool 1.png" alt="sp flash tool zip">
+
+                <p style="text-align: center;">========================================================</p>
+
+                <img src="img/SP Flash Tool 2.png" alt="sp flash tool">
+                    
+                <p>The SP Flash Tool is primarily used to flash firmware on devices with MediaTek chips. It 
+                    can also be used to access phone memory with MediaTek chips even without a battery 
+                    inserted in them. Here, we’ll use it to access the phone’s memory.
+                </p> 
+
+                <img src="img/SP Flash Tool 3.png" alt="sp flash tool program" >
+
+                <h3>Step 2: Download <a href="https://ava5.androidfilehost.com/dl/2KEgeiGcATfYuPCXP5KQzA/1715603623/24269982087012126/Windows+10_MTK+VCOM+USB+Preloader+Drivers.zip" style="text-decoration: none;">(from this link)</a> and Install MTK VCOM Preloader USB Drivers</h3>
+
+                <P>This driver allows SP Flash Tool to communicate with your phone even without a battery. 
+                    Installing this driver is somewhat technical, so follow the installation 
+                    instructions <a href="https://www.ytechb.com/mtk-vcom-usb-drivers-windows-10/" style="text-decoration: none;">(from this link)</a> carefully.
+                </P>
+
+                <p>Without this driver, SP Flash Tool won’t detect or read the phone.</p>
+
+                <h3>Step 3: Find and Download Your Phone’s Stock Firmware</h3>
+
+                <p>Next, download the stock firmware for your specific phone model from your manufacturer’s website or a trusted site.</p>
+
+                <p>From the firmware, we have to get the phone’s scatter file. Scatter file usually is a 
+                    text document that contains essential information about the phone’s memory layout. 
+                    SP Flash Tool requires this file to work effectively.
+                </p>
+
+                <h3>Step 4: Load the Scatter File in SP Flash Tool</h3>
+
+                <p>Launch SP Flash Tool by opening the `flash_tool.exe` file in the folder you extracted 
+                    earlier  – one good thing is the program is plug and play.
+                </p> 
+
+                <img src="img/sp program.png" alt="sp homepage">
+
+                <p>By default, you’ll be in the “Download” tab. Click the “Choose” button next to 
+                    the “Scatter-loading File” line to load your scatter file.
+                </p>
+
+                <p>Once the scatter file downloads, you should see something like the picture below.</p>
+
+                <img src="img/sp scatter file.png" alt="sp scatter file">
+
+                <p>Ensure you have downloaded the correct scatter file, please!</p>
+
+                <h3>Step 5: Run a Memory Test</h3>
+
+                <p>Switch to the “memory Test” tab. Here, you need to run a memory test to get the size of the memory intended for recovery. </p>
+
+                <p>Check all boxes under the “Select Memory Test Method” or just click the Select 
+                    All button below the boxes. Then, click the start button at the right hand side to begin the test.
+                </p>
+
+                <img src="img/memory test.png" alt="memory test">
+
+                <p>The test should take some few minutes. Once the test completes, note down the EMMC_PART_USER’s 
+                    figure shown after the result. The figure indicates the size of the phone memory we want to backup. 
+                    We will need it later after this process is completed.
+                </p>
+
+                <img src="img/memory test 2.png" alt="memory test result">
+
+                <p>At the front of the EMMC_PART_USER, there is Size and then a figure like this: 
+                    0x00000001d2800000(7464MB). This shows the connected phone has a 8GB memory.
+                </p>
+
+                <h3>Step 6: Set Up Readback in SP Flash Tool</h3>
+
+                <p>Switch over to the “Readback” tab. This is where we need the EMMC_PART_USER’s figure from the memory test.</p>
+
+                <p>Click the “Add” button to create a new readback file. 
+                </p>
+
+                <img src="img/readback 1.png" alt="add readback">
+
+                <p>Once completed, double 
+                    click on the newly created readback file to save the file in a location on your computer.
+                </p>
+
+                <img src="img/readback 2.png" alt="save readback">
+
+                <p>Upon saving the file, a new page will appear as shown below.</p>
+
+                <img src="img/readback block start.png" alt="new readback">
+
+                <p>On this page, we will configure the region and length of memory we want to readback. 
+                    Click the dropdown button in front of “Region” and select EMMC_USER. Leave the 
+                    start address as it is but change the “Length” address to the EMMC_PART_USER’s figure we got under the “Memory Test” tab.
+                </p>
+
+                <img src="img/readback connfiguration.png" alt="readback connfiguration">
+
+                <p>Now, we are set to readback the memory of the phone. By now, the “Read 
+                    Back” button is activated. Click on it and wait for the process to complete 
+                    within some minutes depending on the size of the phone’s memory.
+                </p>
+
+                <img src="img/readback process.png" alt="readback process">
+
+                <p style="text-align: center;">====================================</p>
+
+                <img src="img/readback in progress.png" alt="readback in progress">
+
+                <h3>Step 7: Mount the Readback File with OSFMount</h3>
+
+                <p>Once step 6 is completed, locate the saved readback file on your PC. 
+                    You can’t read the file yet. In fact, it is completely meaningless 
+                    because it is in Hex format unless we have a means to read it.
+                </p>
+
+                <p>This is where OSFMount comes in. OSFMount allows us to mount image 
+                    files as a virtual drive on Windows. With it, we will be able to mount 
+                    our readback file as a virtual disk so that we can save its content in a meaningful format.
+                </p>
+
+                <p>You can download it online from this <a href="https://www.osforensics.com/downloads/osfmount.exe" style="text-decoration: none;"> link.</a></p>
+
+                <p>Open OSFMount after the installation is completed. Click on “Mount new” at the bottom left of the program.</p>
+
+                <img src="img/osf mount.png" alt="osf mount">
+
+                <p>The mounting process has four stages. In the first stage, you have to 
+                    select the disk image file and the type you want to mount.
+                </p>
+
+                <img src="img/osf mount stage 1.png" alt="osf mount stage 1">
+
+                <p>Select Disk image file and move on to navigate to the location you 
+                    saved the readback file earlier on and select it. Click next to move on to stage 2.
+                </p>
+
+                <img src="img/osf mount stage 2.png" alt="osf mount stage 2">
+
+                <p>In this stage, chose “Mount entire image as virtual disks” and click next.</p>
+
+                <p>Quite surprising, OSFMount usually jumps from stage 2 to 4, so you automatically 
+                    jump to step 4 from step 2 on clicking next.
+                </p>
+
+                <img src="img/osf mount 4.png" alt="stage 4">
+
+                <p>In stage 4, check the “Mount as removable media” and leave all other 
+                    options in their default selection. Then, click on mount to mount the virtual disk on Windows.
+                </p>
+
+                <p>OSFMount will mount the virtual disk by assigning it letters from “E” to “Z”.</p>
+
+                <img src="img/osf mount mounted-drive.png" alt="drive mounted">
+
+                <p>However, it is very common that the files may not be accessible 
+                    immediately because a Windows prompt usually appears asking to 
+                    format the drive before it opens. 
+                </p>
+
+                <img src="img/osf mount format box.png" alt="format box">
+                    
+                <p>This means the original readback file is not a valid system file.
+                </p>
+
+                <p>We won’t be able to access the virtual drives on the computer with this situation. But, there is a solution.</p>
+
+                <p>We need to find a good data recovery software to access the virtual drive. 
+                    You can try any data recovery software you know but Power Data Recovery 
+                    software seems to be the best for this task. You can check it 
+                    <a href="http://www.powerdatarecovery.com/" style="text-decoration: none;">here.</a> 
+                </p>
+
+                <h3>Step 8: Recover Files with Power Data Recovery Software</h3>
+
+                <p>Download Power Data Recovery software from the link in step 7. 
+                    It doesn’t need installation because it is a plug and play program. 
+                    Another good news is that it is fantastic and free so far it is for home use.
+                </p>
+
+                <p>Open the program and click on “Lost Partition Recovery”.</p>
+
+                <img src="img/lost partition.png" alt="lost partition">
+                
+                <p>
+                    We have to assume we want to recover data from the lost virtual drives.
+                </p>
+                
+                <p>The program will scan for all attached devices and, luckily, our mounted virtual drives are included, too.</p>
+
+                <img src="img/partition scanning.png" alt="partition scanning">
+
+                <p>Once the attached devices appear, you have to click on the virtual 
+                    drives one after the other.
+                </p>  
+
+                <img src="img/attached partitions.png" alt="attached partition">
+
+                <p>
+                    Watch out for drives with heavy size because they usually have the highest number of files. 
+                    In fact, the drive with the highest size usually contains phones’ data.
+                </p>
+
+                <img src="img/attached partition 2.png" alt="attached partition">
+
+                <p>Before we move on, we have to set the extent and type of files we want to recover.
+                </p>
+
+                <P>Click on the “Advanced Setting” button to go to the page.</P> 
+
+                <img src="img/advance settings.png" alt="advance settings">
+
+                <p>For best recovery, check all boxes and click ok.</P>
+
+                <img src="img/advance setting 2.png" alt="advance setting">
+
+                <p>Now, highlight any of the virtual disk and click on the “Full Scan” button. 
+                    The scan will commence and should take some moments depending on the disk size.
+                </p>
+
+                <img src="img/full scan.png" alt="full scan">
+
+                <p>On completion, you should have something like the image below:</p>
+
+                <img src="img/scan result.png" alt="scan result">
+
+                <p>Then, firstly highlight the partition, then click on “Show Files” at the top left hand side of the program.</p>
+
+                <img src="img/show files.png" alt="show files">
+                
+                <p>Here we have our files in various format. You can navigate through them as you desire.</p>
+
+                <img src="img/result files.png" alt="scan result files">
+
+                <p>To recover files in any of the folder, right-click on the folder and select “Recover” 
+                    from the options available. 
+                </p>
+
+                <img src="img/recovery process.png" alt="recovery process">
+
+                <p>Select a location to save the files and begin the process.</p>
+
+                <img src="img/saving recovered files.png" alt="saving recovered files">
+
+                <p>That’s it. With this method, you can recover your audios, pictures, videos, etc. on literarily any dead phone.</p>
+
+
+
+
+                
+
+            </main>
+        
+        </section>
+    
+        <div class="clear"></div>
+
+        <div class="footer-a">
+
+            <div><b>(c) Copyright 2025 Curious Tech Den</b></div>
+
+        </div>
+
+         <script src="index.js"></script>
+
+    </body>
+
+
+
+
+
+
+
+
+</html>
